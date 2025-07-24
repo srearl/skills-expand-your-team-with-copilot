@@ -1,0 +1,152 @@
+name: ⚡ Performance Issue
+description: Report problems with website speed, loading, or responsiveness
+title: "[PERFORMANCE] "
+labels: ["performance", "bug", "teacher-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Is the website running slowly or having loading problems? Use this form to report performance issues.
+
+  - type: dropdown
+    id: performance-type
+    attributes:
+      label: What type of performance problem are you experiencing?
+      options:
+        - Website loads very slowly
+        - Pages take too long to respond
+        - Activities list is slow to load or filter
+        - Registration/signup process is slow
+        - Website freezes or becomes unresponsive
+        - Images or content don't load properly
+        - Website works slowly on mobile/tablet
+        - Other performance issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: performance-description
+    attributes:
+      label: Describe the performance problem
+      description: What exactly happens? How long does it take?
+      placeholder: |
+        Example: "When I click to filter activities by 'Sports', it takes about 10 seconds before anything happens"
+        or "The website takes over 30 seconds to load on school computers"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does this happen?
+      options:
+        - Always - happens every time
+        - Usually - happens most of the time
+        - Sometimes - happens occasionally
+        - Rarely - has happened a few times
+        - Just once - only happened once so far
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device-type
+    attributes:
+      label: What device are you using?
+      options:
+        - School computer/Chromebook
+        - Personal desktop computer
+        - Personal laptop
+        - Tablet (iPad, Android tablet)
+        - Smartphone
+        - Multiple devices have the same problem
+    validations:
+      required: true
+
+  - type: dropdown
+    id: internet-connection
+    attributes:
+      label: What type of internet connection?
+      options:
+        - School WiFi
+        - Home broadband/WiFi
+        - Mobile data/cellular
+        - Public WiFi
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: time-of-day
+    attributes:
+      label: When do you typically experience this problem?
+      options:
+        - During school hours (8 AM - 3 PM)
+        - After school hours (3 PM - 6 PM)
+        - Evenings (6 PM - 10 PM)
+        - All times of day
+        - Only during busy periods (lunch, after school)
+        - No specific pattern
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: What are you doing when the performance problem occurs?
+      description: List the specific steps that lead to the slow performance.
+      placeholder: |
+        1. Go to the activities website
+        2. Try to filter activities by category
+        3. Notice it takes a very long time to respond
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact-level
+    attributes:
+      label: How much does this affect your work?
+      options:
+        - Low - Slightly annoying but manageable
+        - Medium - Slows down tasks but can still complete them
+        - High - Makes it difficult to complete important tasks
+        - Critical - Prevents completing necessary work
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Have you found any workarounds?
+      description: Is there anything you do to make it work better?
+      placeholder: |
+        Example: "Refreshing the page sometimes helps"
+        or "It works better if I wait a few minutes and try again"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional information
+      description: Any other details about the performance problem?
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Developer
+        
+        **Acceptance Criteria:**
+        - [ ] The performance issue should be reproduced and measured
+        - [ ] Root cause should be identified (frontend, backend, database, network)
+        - [ ] Performance improvements should be implemented
+        - [ ] The fix should be tested under similar conditions as reported
+        - [ ] Performance should meet reasonable expectations for school environment
+        
+        **Technical Investigation Areas:**
+        - Check network requests in browser dev tools
+        - Analyze JavaScript performance and console errors
+        - Review FastAPI backend response times
+        - Check database query efficiency
+        - Analyze static file loading (CSS, JS, images)
+        - Test with different connection speeds
+        - Profile memory usage and potential leaks
+        - Consider caching strategies
+        - Review code for inefficient algorithms or loops

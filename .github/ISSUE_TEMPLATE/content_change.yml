@@ -1,0 +1,117 @@
+name: 📝 Content or Text Change
+description: Request changes to text, wording, or content on the website
+title: "[CONTENT] "
+labels: ["content", "teacher-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Need to update text, fix typos, or change content on the website? Use this form to request content changes.
+
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: What type of content change is needed?
+      options:
+        - Fix typo or spelling error
+        - Update existing text/wording
+        - Add new text or information
+        - Remove outdated information
+        - Update school information (name, contact, etc.)
+        - Change activity descriptions
+        - Update teacher/staff names
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Where is the content that needs to be changed?
+      description: Tell us exactly where on the website the content appears.
+      placeholder: |
+        Example: "On the main activities page, in the Drama Club description"
+        or "In the header where it says the school name"
+        or "In the footer copyright information"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current content (what it says now)
+      description: Copy and paste the exact text that currently appears on the website.
+      placeholder: |
+        Example: "Drama Club meets every Tuesday at 3:00 PM in Room 101"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-content
+    attributes:
+      label: Desired content (what it should say)
+      description: Provide the exact text you want it to say instead.
+      placeholder: |
+        Example: "Drama Club meets every Tuesday and Thursday at 3:30 PM in the Auditorium"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for the change
+      description: Why does this content need to be updated?
+      placeholder: |
+        Example: "The meeting time and location changed for this semester"
+        or "There's a spelling error that needs to be fixed"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How urgent is this change?
+      options:
+        - Low - Can be updated anytime
+        - Medium - Should be updated soon
+        - High - Important for student information
+        - Critical - Contains incorrect information that could confuse students
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: affected-areas
+    attributes:
+      label: Does this change affect other areas?
+      description: Check all that apply
+      options:
+        - label: This might affect other activities or pages
+        - label: This is school-wide information (like contact details)
+        - label: This affects student registration process
+        - label: This might require updating printed materials
+        - label: Not sure / Need help determining impact
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional information
+      description: Any other details or context about this content change?
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Developer
+        
+        **Acceptance Criteria:**
+        - [ ] The specified content should be located in the codebase
+        - [ ] The content should be updated to match the desired text exactly
+        - [ ] All instances of the content should be updated if it appears in multiple places
+        - [ ] The change should not break any functionality
+        - [ ] The updated content should display correctly on all device sizes
+        
+        **Technical Implementation Notes:**
+        - Check HTML files in `/src/static/` for frontend content
+        - Check Python files in `/src/backend/` for backend content/data
+        - Look for content in database.py for activity descriptions
+        - Verify content doesn't appear in multiple files
+        - Test rendering on different screen sizes
+        - Consider if change affects API responses or data structure

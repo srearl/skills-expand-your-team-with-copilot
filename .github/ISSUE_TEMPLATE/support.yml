@@ -1,0 +1,112 @@
+name: ❓ General Support or Question
+description: Ask questions about the website or request general help
+title: "[SUPPORT] "
+labels: ["question", "support", "teacher-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question about how the website works or need general support? We're here to help!
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: What type of help do you need?
+      options:
+        - How to use a feature on the website
+        - Understanding how something works
+        - Best practices for managing activities
+        - Training or documentation request
+        - Technical question about the system
+        - General feedback or suggestion
+        - Other question or support need
+    validations:
+      required: true
+
+  - type: textarea
+    id: question-description
+    attributes:
+      label: What's your question or what help do you need?
+      description: Please be as specific as possible so we can provide the best help.
+      placeholder: |
+        Example: "How do I see which students have signed up for Drama Club?"
+        or "Can we export a list of all activity participants?"
+        or "What's the best way to update activity information for next semester?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-role
+    attributes:
+      label: What's your role?
+      options:
+        - Teacher/Faculty
+        - Administrator
+        - Staff member
+        - Student
+        - Parent/Guardian
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Is there any background information that would help us understand your question better?
+      placeholder: |
+        Example: "I'm new to managing extracurricular activities"
+        or "This is for planning next semester's activities"
+        or "I'm trying to help a parent who had a question"
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How urgent is this?
+      options:
+        - Low - Just curious, no rush
+        - Medium - Would like to know soon
+        - High - Need this for current work
+        - Urgent - Blocking important tasks
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tried-solutions
+    attributes:
+      label: What have you already tried?
+      description: Check all that apply
+      options:
+        - label: Looked through the website interface
+        - label: Asked colleagues for help
+        - label: Searched online documentation
+        - label: Tried different approaches
+        - label: This is my first attempt to solve this
+
+  - type: textarea
+    id: ideal-outcome
+    attributes:
+      label: What would be the ideal outcome?
+      description: What would you like to be able to do or understand after we help you?
+      placeholder: |
+        Example: "I'd like to be able to quickly see enrollment numbers for each activity"
+        or "I want to understand the best workflow for updating activities"
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Developer
+        
+        **Response Guidelines:**
+        - [ ] Provide clear, non-technical explanations appropriate for the user's role
+        - [ ] Include step-by-step instructions when applicable
+        - [ ] Identify if this reveals a need for better documentation or UI improvements
+        - [ ] Consider if the question indicates a feature gap or usability issue
+        - [ ] Offer to create follow-up issues for any improvements identified
+        
+        **Potential Actions:**
+        - Answer the question directly if it's about existing functionality
+        - Create documentation if none exists for this topic
+        - Consider UI improvements if the feature is hard to find or use
+        - Suggest new features if the requested capability doesn't exist
+        - Provide training materials or guides if needed
