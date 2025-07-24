@@ -74,12 +74,25 @@ class MockCollection:
                         if doc_copy[key] > value["$lte"]:
                             match = False
                             break
+                    elif isinstance(value, dict) and "$exists" in value:
+                        # Handle $exists operator
+                        field_exists = key in doc_copy
+                        if field_exists != value["$exists"]:
+                            match = False
+                            break
                     elif doc_copy[key] != value:
                         match = False
                         break
                 else:
-                    match = False
-                    break
+                    # Handle case where field doesn't exist in document
+                    if isinstance(value, dict) and "$exists" in value:
+                        # $exists: False should match documents without the field
+                        if value["$exists"]:
+                            match = False
+                            break
+                    else:
+                        match = False
+                        break
             
             if match:
                 results.append(doc_copy)
