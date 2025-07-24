@@ -1,0 +1,127 @@
+name: ♿ Accessibility Improvement
+description: Make the website more accessible for students and teachers with disabilities
+title: "[ACCESSIBILITY] "
+labels: ["accessibility", "enhancement", "teacher-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us make the website accessible to everyone! Report accessibility issues or suggest improvements.
+
+  - type: dropdown
+    id: accessibility-type
+    attributes:
+      label: What type of accessibility improvement is needed?
+      options:
+        - Text is too small or hard to read
+        - Colors are hard to distinguish or see
+        - Website doesn't work well with screen readers
+        - Keyboard navigation issues (can't use Tab key effectively)
+        - Images missing descriptive text
+        - Videos or audio missing captions/transcripts
+        - Forms are difficult to fill out
+        - General usability for people with disabilities
+        - Not sure - need accessibility review
+    validations:
+      required: true
+
+  - type: textarea
+    id: accessibility-issue
+    attributes:
+      label: Describe the accessibility challenge
+      description: What specific difficulty do users face? Who is affected?
+      placeholder: |
+        Example: "Students who use screen readers can't understand what the activity cards contain because the images don't have descriptions"
+        or "The text is too small for students with visual impairments to read comfortably"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-group
+    attributes:
+      label: Which group of users would benefit?
+      options:
+        - Students with visual impairments
+        - Students with hearing impairments
+        - Students with motor/mobility impairments
+        - Students with cognitive or learning disabilities
+        - Teachers with disabilities
+        - All users (universal design improvement)
+        - Not sure - multiple groups might benefit
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-barrier
+    attributes:
+      label: What prevents these users from using the website effectively?
+      description: Describe the specific barriers or obstacles.
+      placeholder: |
+        Example: "Screen reader users hear 'button' but don't know what the button does"
+        or "Users can't increase text size without breaking the layout"
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-solution
+    attributes:
+      label: What would make this more accessible?
+      description: If you have ideas for solutions, please share them.
+      placeholder: |
+        Example: "Add descriptive text to all images and buttons"
+        or "Make sure text can be enlarged to 200% without scrolling"
+        or "Add keyboard shortcuts for common actions"
+
+  - type: checkboxes
+    id: testing-methods
+    attributes:
+      label: How was this accessibility issue discovered?
+      description: Check all that apply
+      options:
+        - label: Student or staff member reported difficulty
+        - label: Tested with screen reader software
+        - label: Tested keyboard-only navigation
+        - label: Accessibility audit or review
+        - label: Personal experience with accessibility needs
+        - label: Other accessibility testing method
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How urgent is this accessibility improvement?
+      options:
+        - Low - Minor improvement that would be helpful
+        - Medium - Important for some users' experience
+        - High - Prevents some users from accessing key functionality
+        - Critical - Makes website unusable for people with disabilities
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional information
+      description: Any other details about accessibility requirements or considerations?
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Developer
+        
+        **Acceptance Criteria:**
+        - [ ] The accessibility improvement should be implemented following WCAG 2.1 guidelines
+        - [ ] The solution should not negatively impact other users' experience
+        - [ ] Changes should be tested with appropriate assistive technologies
+        - [ ] All interactive elements should be keyboard accessible
+        - [ ] Color contrast should meet WCAG AA standards (4.5:1 for normal text, 3:1 for large text)
+        
+        **Technical Implementation Notes:**
+        - Add appropriate ARIA labels and roles to HTML elements
+        - Ensure proper heading hierarchy (h1, h2, h3, etc.)
+        - Include alt text for all meaningful images
+        - Test with screen readers (NVDA, JAWS, VoiceOver)
+        - Verify keyboard navigation works for all interactive elements
+        - Check color contrast ratios with tools like WebAIM's contrast checker
+        - Consider focus indicators for keyboard users
+        - Test with browser zoom up to 200%
+        - Validate HTML for semantic correctness

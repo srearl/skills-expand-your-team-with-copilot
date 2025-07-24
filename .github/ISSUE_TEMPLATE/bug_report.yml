@@ -1,0 +1,112 @@
+name: 🐛 Bug Report
+description: Report a problem with the school activities website
+title: "[BUG] "
+labels: ["bug", "teacher-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please fill out the sections below to help us understand and fix the issue.
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: What's not working?
+      description: Describe what you expected to happen and what actually happened instead.
+      placeholder: |
+        Example: "When I try to click on the 'Drama Club' activity, nothing happens. I expected to see the activity details."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area-affected
+    attributes:
+      label: Which part of the website is affected?
+      options:
+        - Activities list/display
+        - Student registration/signup
+        - Teacher login
+        - Search and filtering
+        - Mobile/tablet view
+        - Overall website navigation
+        - Other (please specify in description)
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce the problem
+      description: Tell us exactly what you did when the problem occurred.
+      placeholder: |
+        1. Go to the activities page
+        2. Click on 'Drama Club'
+        3. Notice that nothing happens
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device-type
+    attributes:
+      label: What device were you using?
+      options:
+        - Desktop computer
+        - Laptop
+        - Tablet (iPad, Android tablet)
+        - Smartphone
+        - School computer/chromebook
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Which web browser were you using?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Internet Explorer
+        - Not sure
+    validations:
+      required: false
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How urgent is this issue?
+      options:
+        - Low - Minor inconvenience, can work around it
+        - Medium - Affects some functionality but not critical
+        - High - Prevents important tasks from being completed
+        - Critical - Website is completely broken for students/teachers
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional information
+      description: Add any other context, screenshots, or details that might help us understand the problem.
+      placeholder: Any other details that might be helpful...
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Developer
+        
+        **Acceptance Criteria:**
+        - [ ] The reported issue should be reproduced and confirmed
+        - [ ] The root cause should be identified in the code
+        - [ ] A fix should be implemented that resolves the issue
+        - [ ] The fix should be tested to ensure it doesn't break other functionality
+        - [ ] The fix should work across different browsers and devices as specified
+        
+        **Technical Hints:**
+        - Check browser console for JavaScript errors
+        - Verify API endpoints are working correctly
+        - Test responsive design if mobile/tablet issue
+        - Consider accessibility compliance
+        - Check database/data integrity if registration-related

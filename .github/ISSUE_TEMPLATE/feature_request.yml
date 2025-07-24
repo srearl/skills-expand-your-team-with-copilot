@@ -1,0 +1,113 @@
+name: ✨ New Activity or Feature Request
+description: Request a new activity to be added or a new feature for the website
+title: "[FEATURE] "
+labels: ["enhancement", "teacher-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new activity or feature! Please provide as much detail as possible to help us implement your request.
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: What type of request is this?
+      options:
+        - New extracurricular activity to add
+        - New website feature or functionality
+        - Improvement to existing feature
+        - New category for activities
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Describe the new activity or feature
+      description: Provide a clear and detailed description of what you want to be added.
+      placeholder: |
+        Example: "I want to add a new Robotics Club that meets on Tuesdays and Thursdays after school in the engineering room."
+    validations:
+      required: true
+
+  - type: textarea
+    id: activity-details
+    attributes:
+      label: Activity Details (if requesting a new activity)
+      description: Provide specific details about the activity
+      placeholder: |
+        - Activity Name: Robotics Club
+        - Category: Technology
+        - Meeting Days: Tuesday, Thursday
+        - Time: 3:30 PM - 5:00 PM
+        - Location: Engineering Room 205
+        - Teacher/Sponsor: Mr. Johnson
+        - Max Participants: 20
+        - Description: Students learn programming and build robots for competitions
+        - Requirements: None, open to all grades
+
+  - type: textarea
+    id: why-needed
+    attributes:
+      label: Why is this needed?
+      description: Explain why this activity or feature would benefit students and teachers.
+      placeholder: |
+        Example: "Many students have expressed interest in robotics and STEM activities. This would provide hands-on learning opportunities."
+    validations:
+      required: true
+
+  - type: textarea
+    id: success-criteria
+    attributes:
+      label: How will we know this is successful?
+      description: What should happen when this is implemented?
+      placeholder: |
+        Example: "Students should be able to find the Robotics Club in the activities list, filter by Technology category, and sign up for it."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      options:
+        - Low - Nice to have, but not urgent
+        - Medium - Important for upcoming semester
+        - High - Needed soon for current programs
+        - Urgent - Required immediately
+    validations:
+      required: true
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: When do you need this?
+      description: Any specific timeline or deadline requirements?
+      placeholder: |
+        Example: "Before the start of next semester" or "No specific deadline"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional information
+      description: Any other context, requirements, or considerations?
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Developer
+        
+        **Acceptance Criteria:**
+        - [ ] New activity/feature should be implemented as described
+        - [ ] All required details should be captured in the system
+        - [ ] Users should be able to interact with the new addition
+        - [ ] The addition should integrate seamlessly with existing functionality
+        - [ ] Documentation should be updated if necessary
+        
+        **Technical Implementation Notes:**
+        - For new activities: Update database.py with activity data
+        - For new features: Consider impact on both frontend (HTML/CSS/JS) and backend (Python/FastAPI)
+        - Ensure responsive design for mobile compatibility
+        - Test filtering and search functionality with new additions
+        - Consider user authentication requirements
+        - Update API documentation if new endpoints are added
