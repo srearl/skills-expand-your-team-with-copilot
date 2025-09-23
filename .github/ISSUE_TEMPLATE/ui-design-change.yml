@@ -59,6 +59,20 @@ body:
     validations:
       required: true
       
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: How will we know this design change is complete?
+      description: List specific things that must work for this design change to be considered successful
+      placeholder: |
+        - Dark mode toggle appears in top right corner
+        - Clicking toggle switches between light and dark themes
+        - User's preference is remembered between visits
+        - All activity cards display correctly in both modes
+        - Text remains readable in both themes
+    validations:
+      required: true
+      
   - type: dropdown
     id: user-preference
     attributes:
