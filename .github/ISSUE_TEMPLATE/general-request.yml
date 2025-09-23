@@ -1,0 +1,64 @@
+name: 💭 General Request
+description: Other requests that don't fit the specific categories above
+title: "[General] "
+labels: ["question"]
+assignees: ["@copilot"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your request! If this is a bug, feature request, design change, activity management issue, or accessibility improvement, please use the specific templates above for faster processing.
+        
+  - type: input
+    id: request-summary
+    attributes:
+      label: What would you like help with?
+      description: Briefly describe your request
+      placeholder: "Add a footer with school contact information"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: detailed-description
+    attributes:
+      label: Detailed Description
+      description: Explain your request in detail, including what you want and why
+      placeholder: |
+        Please describe:
+        - What you want to change or add
+        - Why this change is needed
+        - How it should work
+        - Who would benefit from this change
+    validations:
+      required: true
+      
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: How will we know this is complete?
+      description: Describe what needs to work for this request to be considered finished
+      placeholder: |
+        - Footer appears on all pages
+        - Contains school name, address, and phone number
+        - Looks good on mobile and desktop
+        - Matches the website design
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How urgent is this request?
+      options:
+        - "High - Needed soon"
+        - "Medium - Would be nice to have"
+        - "Low - Just an idea"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details, examples, or context that might help
+      placeholder: "This request came from the school administration for the new website launch"
