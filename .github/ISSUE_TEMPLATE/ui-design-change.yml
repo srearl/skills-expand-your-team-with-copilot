@@ -1,0 +1,134 @@
+name: 🎨 UI/Design Change
+description: Request changes to the website's appearance or user interface
+title: "[UI] "
+labels: ["design", "enhancement"]
+assignees: ["@copilot"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a design improvement! Please provide detailed information so our coding assistant can implement the visual changes properly.
+        
+  - type: input
+    id: design-summary
+    attributes:
+      label: What visual change would you like?
+      description: Briefly describe the design change you want
+      placeholder: "Add dark mode toggle button"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: current-design
+    attributes:
+      label: What does it look like now?
+      description: Describe the current appearance that you want to change
+      placeholder: |
+        Currently the website only has a light theme with white background and blue colors.
+        There's no way for users to switch themes.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: desired-design
+    attributes:
+      label: What should it look like instead?
+      description: Describe exactly how you want it to appear
+      placeholder: |
+        - Add a toggle button in the top right corner
+        - Dark mode should have dark background with light text
+        - Should remember user's preference
+        - All activity cards should adapt to the chosen theme
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: design-area
+    attributes:
+      label: What part of the website should be changed?
+      options:
+        - "Overall color scheme/theme"
+        - "Header and navigation"
+        - "Activity cards"
+        - "Sidebar and filters"
+        - "Login/registration forms"
+        - "Buttons and interactive elements"
+        - "Typography and text"
+        - "Layout and spacing"
+        - "Other (specify in description)"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: How will we know this design change is complete?
+      description: List specific things that must work for this design change to be considered successful
+      placeholder: |
+        - Dark mode toggle appears in top right corner
+        - Clicking toggle switches between light and dark themes
+        - User's preference is remembered between visits
+        - All activity cards display correctly in both modes
+        - Text remains readable in both themes
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: user-preference
+    attributes:
+      label: Who is asking for this change?
+      options:
+        - "Students have requested this"
+        - "Teachers have requested this"
+        - "Parents have requested this" 
+        - "Accessibility improvement"
+        - "School administration request"
+        - "Personal preference"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: color-specifications
+    attributes:
+      label: Specific Colors or Styling Requirements
+      description: If you have specific colors, fonts, or styling requirements, list them here
+      placeholder: |
+        - School colors: white and lime green (#32CD32)
+        - Font should remain readable and accessible
+        - Buttons should be easy to click on mobile devices
+        
+  - type: dropdown
+    id: device-compatibility
+    attributes:
+      label: Should this work on all devices?
+      options:
+        - "Yes - computers, tablets, and phones"
+        - "Primarily computers/laptops"
+        - "Primarily mobile devices"
+        - "Not sure"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: accessibility-considerations
+    attributes:
+      label: Accessibility Requirements
+      description: Are there any accessibility needs to consider? (color contrast, screen readers, etc.)
+      placeholder: |
+        - Must maintain good color contrast for readability
+        - Should work with screen readers
+        - Large enough buttons for easy clicking
+        
+  - type: textarea
+    id: design-examples
+    attributes:
+      label: Examples or References
+      description: Links to other websites or descriptions of similar designs you like (Optional)
+      placeholder: "This is similar to how GitHub has a dark mode toggle in the top right"
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other design details, mockups, or context that might help
+      placeholder: "Students specifically mentioned they prefer darker interfaces for evening study sessions"

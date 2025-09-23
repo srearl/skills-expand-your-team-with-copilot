@@ -1,0 +1,101 @@
+name: ✨ Feature Request
+description: Request a new feature for the activities website
+title: "[Feature] "
+labels: ["enhancement"]
+assignees: ["@copilot"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Please provide detailed information so our coding assistant can implement it properly.
+        
+  - type: input
+    id: feature-summary
+    attributes:
+      label: What new feature would you like?
+      description: Briefly describe the feature you want to add
+      placeholder: "Add difficulty levels to activities"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Detailed Feature Description
+      description: Explain exactly what this feature should do and how it should work
+      placeholder: |
+        I want to add difficulty levels to activities so students can find appropriate challenges.
+        - Should have 3 levels: Beginner, Intermediate, Advanced
+        - Activities without a level are suitable for all levels
+        - Should show on activity cards when specified
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: feature-area
+    attributes:
+      label: What part of the website should this feature be added to?
+      options:
+        - "Activity listings/cards"
+        - "Search and filtering"
+        - "Student registration process"
+        - "Teacher management features"
+        - "Overall website navigation"
+        - "New page/section"
+        - "Other (specify in description)"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: user-stories
+    attributes:
+      label: How would teachers and students use this feature?
+      description: Describe step-by-step how different users would interact with this feature
+      placeholder: |
+        As a teacher: I want to set difficulty levels when creating activities
+        As a student: I want to filter activities by difficulty level to find appropriate challenges
+        As a parent: I want to see difficulty levels to help my child choose activities
+    validations:
+      required: true
+      
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: How will we know this feature is working correctly?
+      description: List specific things that must work for this feature to be considered complete
+      placeholder: |
+        - Activities can have difficulty levels assigned (Beginner, Intermediate, Advanced)
+        - Activities without levels show as "All Levels"
+        - Filter dropdown shows difficulty options
+        - Activity cards display difficulty when set
+        - Filtering by difficulty works correctly
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this feature?
+      options:
+        - "High - Students/teachers are asking for this frequently"
+        - "Medium - Would be nice to have"
+        - "Low - Just an idea for the future"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: design-suggestions
+    attributes:
+      label: Design or Implementation Suggestions
+      description: Any ideas about how this should look or work? (Optional but helpful)
+      placeholder: |
+        - Could use colored badges for difficulty levels
+        - Beginner = Green, Intermediate = Yellow, Advanced = Red
+        - Add filter in the left sidebar with other filters
+        
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details, examples from other websites, or context that might help
+      placeholder: "This is similar to how Khan Academy shows difficulty levels on their courses"

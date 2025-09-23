@@ -1,0 +1,132 @@
+name: 📊 Activity Management
+description: Request changes to how activities are managed or displayed
+title: "[Activities] "
+labels: ["activities", "enhancement"]
+assignees: ["@copilot"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for requesting activity management improvements! Please provide detailed information so our coding assistant can implement the changes properly.
+        
+  - type: input
+    id: activity-change-summary
+    attributes:
+      label: What activity management change would you like?
+      description: Briefly describe what you want to change about how activities work
+      placeholder: "Add capacity warnings when activities are nearly full"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: What type of change is this?
+      options:
+        - "Add new information to activity cards"
+        - "Change how activities are displayed"
+        - "Improve activity registration process"
+        - "Add new filtering/sorting options"
+        - "Change activity data/content"
+        - "Improve teacher activity management"
+        - "Other (specify in description)"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: How do activities work currently?
+      description: Describe the current activity management that you want to change
+      placeholder: |
+        Currently students can see activities and register, but there's no warning when activities are getting full.
+        Teachers have to manually check capacity.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: desired-behavior
+    attributes:
+      label: How should activities work instead?
+      description: Describe exactly how you want activity management to work
+      placeholder: |
+        - Activity cards should show visual warnings when they're 75% full
+        - Should show "Nearly Full" badge when 3 or fewer spots remain
+        - Should show "Full" clearly when no spots remain
+        - Teachers should get notifications about capacity
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: affected-users
+    attributes:
+      label: Who would benefit from this change?
+      options:
+        - "Students looking for activities"
+        - "Teachers managing activities"
+        - "Parents helping students choose"
+        - "School administrators"
+        - "All users"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: user-scenarios
+    attributes:
+      label: User Scenarios
+      description: Describe how different people would use this improvement
+      placeholder: |
+        As a student: I want to see when activities are getting full so I can register quickly
+        As a teacher: I want to see capacity warnings so I can plan accordingly
+        As a parent: I want to know if an activity my child wants might fill up soon
+    validations:
+      required: true
+      
+  - type: textarea
+    id: success-criteria
+    attributes:
+      label: How will we know this is working correctly?
+      description: List specific things that must work for this to be considered complete
+      placeholder: |
+        - Activity cards show capacity status clearly
+        - Visual indicators appear at appropriate thresholds
+        - Information is accurate and updates in real-time
+        - Teachers can see capacity information
+        - Students can make informed registration decisions
+    validations:
+      required: true
+      
+  - type: input
+    id: timing-requirements
+    attributes:
+      label: When is this needed?
+      description: Is there a specific deadline or timeline for this change?
+      placeholder: "Before next semester registration opens in 2 weeks"
+      
+  - type: textarea
+    id: data-requirements
+    attributes:
+      label: Data or Content Requirements
+      description: What specific information needs to be tracked or displayed?
+      placeholder: |
+        - Current participant count
+        - Maximum capacity
+        - Available spots remaining
+        - Registration deadline dates
+        
+  - type: textarea
+    id: technical-considerations
+    attributes:
+      label: Technical Considerations
+      description: Any technical requirements or limitations to consider? (Optional)
+      placeholder: |
+        - Should work with existing database structure
+        - Must be mobile-friendly
+        - Should load quickly even with many activities
+        
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details, examples, or context that might help
+      placeholder: "This became important after several popular activities filled up within hours of opening registration"

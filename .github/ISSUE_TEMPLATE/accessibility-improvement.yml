@@ -1,0 +1,146 @@
+name: ♿ Accessibility Improvement
+description: Request improvements to make the website more accessible for all users
+title: "[Accessibility] "
+labels: ["accessibility", "enhancement"]
+assignees: ["@copilot"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping make our website accessible to all users! Please provide detailed information so our coding assistant can implement the accessibility improvements properly.
+        
+  - type: input
+    id: accessibility-summary
+    attributes:
+      label: What accessibility improvement would you like?
+      description: Briefly describe the accessibility issue or improvement needed
+      placeholder: "Add keyboard navigation support for activity cards"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: accessibility-type
+    attributes:
+      label: What type of accessibility improvement is this?
+      options:
+        - "Keyboard navigation"
+        - "Screen reader support"
+        - "Color contrast/visual accessibility"
+        - "Font size and readability"
+        - "Motor accessibility (easier clicking/touching)"
+        - "Cognitive accessibility (clearer instructions)"
+        - "Multiple accessibility areas"
+        - "Other (specify in description)"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: affected-users
+    attributes:
+      label: Who would benefit from this improvement?
+      options:
+        - "Users who rely on keyboard navigation"
+        - "Users who use screen readers"
+        - "Users with visual impairments"
+        - "Users with motor impairments"
+        - "Users with cognitive differences"
+        - "All users (general usability)"
+        - "Not sure"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: current-issue
+    attributes:
+      label: What accessibility barrier exists currently?
+      description: Describe the current accessibility issue in detail
+      placeholder: |
+        Currently, users cannot navigate through activity cards using only the keyboard.
+        The tab key skips over important elements, making it impossible for some users to browse activities effectively.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: desired-improvement
+    attributes:
+      label: How should this be improved?
+      description: Describe exactly what accessibility features should be added
+      placeholder: |
+        - All activity cards should be keyboard accessible with tab navigation
+        - Enter key should open registration modal
+        - Arrow keys could move between activity cards
+        - Screen readers should announce activity details clearly
+        - Focus indicators should be clearly visible
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: compliance-standard
+    attributes:
+      label: Are there specific accessibility standards to follow?
+      options:
+        - "WCAG 2.1 Level AA (recommended web standard)"
+        - "Section 508 (US government standard)"
+        - "School district requirements"
+        - "Not sure - please use best practices"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: user-testing
+    attributes:
+      label: How can we test this improvement?
+      description: Describe how to verify the accessibility improvement works correctly
+      placeholder: |
+        - Test with keyboard only (no mouse)
+        - Test with screen reader software
+        - Check color contrast ratios
+        - Verify focus indicators are visible
+        - Test with users who have accessibility needs
+    validations:
+      required: true
+      
+  - type: textarea
+    id: priority-justification
+    attributes:
+      label: Why is this improvement important?
+      description: Explain the impact of this accessibility barrier and why it should be prioritized
+      placeholder: |
+        We have students and parents who use assistive technology and they're currently unable to fully use the activities website.
+        This creates equity issues in accessing extracurricular opportunities.
+    validations:
+      required: true
+      
+  - type: input
+    id: affected-pages
+    attributes:
+      label: What pages or features are affected?
+      description: List the specific pages or features that need accessibility improvements
+      placeholder: "Main activities page, registration forms, search filters"
+      
+  - type: textarea
+    id: technical-requirements
+    attributes:
+      label: Technical Requirements
+      description: Any specific technical standards or requirements? (Optional)
+      placeholder: |
+        - Must work with common screen readers (NVDA, JAWS, VoiceOver)
+        - Should maintain current functionality
+        - Must work on mobile devices too
+        
+  - type: textarea
+    id: resources
+    attributes:
+      label: Helpful Resources
+      description: Any accessibility guidelines, tools, or resources that might help? (Optional)
+      placeholder: |
+        - WAVE accessibility checker found these issues
+        - WebAIM guidelines for keyboard navigation
+        - School district accessibility policy document
+        
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details, user feedback, or context that might help
+      placeholder: "A parent contacted us saying their child can't register for activities due to accessibility barriers"

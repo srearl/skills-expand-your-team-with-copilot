@@ -1,0 +1,80 @@
+name: 🐛 Bug Report
+description: Report a problem with the activities website
+title: "[Bug] "
+labels: ["bug"]
+assignees: ["@copilot"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please provide detailed information so our coding assistant can fix the issue quickly.
+        
+  - type: input
+    id: problem-summary
+    attributes:
+      label: What's not working?
+      description: Briefly describe the problem you're experiencing
+      placeholder: "The website shows the wrong school colors"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Detailed Problem Description
+      description: Explain exactly what's happening and what you expected to happen instead
+      placeholder: |
+        - What I see: The website is blue
+        - What I expected: The website should use our school colors (white and lime green)
+        - When this happens: All the time when I visit the website
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: What part of the website is affected?
+      options:
+        - "Overall design/colors"
+        - "Activity listings"
+        - "Student registration"
+        - "Teacher login"
+        - "Search and filters"
+        - "Other (specify in description)"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: How to reproduce this problem
+      description: List the exact steps someone else could follow to see the same problem
+      placeholder: |
+        1. Go to the activities website
+        2. Look at the main page
+        3. Notice the colors don't match our school colors
+    validations:
+      required: true
+      
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What should happen instead?
+      description: Describe exactly how it should work
+      placeholder: "The website should use white and lime green colors to match Mergington High School branding"
+    validations:
+      required: true
+      
+  - type: input
+    id: browser-info
+    attributes:
+      label: What browser are you using?
+      description: "This helps us test the fix properly"
+      placeholder: "Chrome, Firefox, Safari, etc."
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details that might help (screenshots, error messages, etc.)
+      placeholder: "You can paste screenshots here or mention any error messages you see"

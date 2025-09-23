@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Development Guide
+    url: https://github.com/srearl/skills-expand-your-team-with-copilot/blob/main/docs/how-to-develop.md
+    about: Learn how the website works and how to make changes
+  - name: 💬 General Questions
+    url: https://github.com/srearl/skills-expand-your-team-with-copilot/discussions
+    about: Ask questions or discuss ideas that don't fit the templates above
